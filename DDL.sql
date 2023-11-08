@@ -62,11 +62,18 @@ constraint pk_seccion_a foreign key (Seccion) references Seccion (ID_Seccion),
 constraint pk_tipo_a foreign key (Estado) references Estado_Asignacion(ID_Estado_Asignacion)
 );
 
---(Pendiente) Conectada a Curso y Prerrequisito
-create Table Curso_Prerrequisito(
-ID_Curso_Prerrequisito int PRIMARY KEY IDENTITY(1,1) not null
-);
 --(Pendiente) Conectada a Curso
 create Table Prerrequisito(
-ID_Prerrequisito int PRIMARY KEY IDENTITY(1,1) not null
+ID_Prerrequisito int PRIMARY KEY IDENTITY(1,1) not null,
+curso int not null
+constraint pk_curso_prerequisto foreign key (curso) references Curso (ID_Curso)
+);
+
+--(Pendiente) Conectada a Curso y Prerrequisito
+create Table Curso_Prerrequisito(
+ID_Curso_Prerrequisito int PRIMARY KEY IDENTITY(1,1) not null,
+Curso int not null,
+Prerrequisto int not null
+constraint pk_curso_p foreign key (Curso) references Curso (ID_Curso),
+constraint pk_prerrequisto foreign key (Prerrequisto) references Prerrequisito
 );
