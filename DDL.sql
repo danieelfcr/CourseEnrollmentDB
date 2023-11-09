@@ -39,7 +39,9 @@ constraint pk_curso foreign key (Curso) references Curso(ID_Curso)
 --Conectada a tx_Asignacion y Curso
 Create Table Seccion(
 ID_Seccion int PRIMARY KEY IDENTITY(1,1) not null,
+ID_Curso int,
 Cupo varchar(20) not null
+constraint pk_curso_s foreign key (ID_Curso) references Curso(ID_Curso)
 );
 
 --Conectado a tx_Asignacion
