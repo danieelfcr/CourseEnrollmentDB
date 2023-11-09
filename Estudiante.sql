@@ -1,0 +1,32 @@
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('sR3tGvY7', 'Emma', 'EmWr1', 'Wright', 'Smith');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('uP2iJkO9', 'Liam', 'LiSc2', 'Scott', 'Johnson');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('hL8mNpX6', 'Olivia', 'OlHi3', 'Hill', 'Williams');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('aW1oFzQ4', 'Noah', 'NoCo4', 'Cooper', 'Jones');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('dI5gHuT2', 'Ava', 'AvKi5', 'King', 'Brown');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('rE6sVxY3', 'Isabella', 'IsGr6', 'Green', 'Davis');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('nO9cMwZ8', 'Sophia', 'SoEv7', 'Evans', 'Miller');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('bA4jLpQ7', 'Jackson', 'JaBa8', 'Baker', 'Wilson');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('cE2rTkU9', 'Aiden', 'AiAd9', 'Adams', 'Moore');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('gI7dFvX3', 'Lucas', 'LuNe10', 'Nelson', 'Taylor');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('tO8nRmZ5', 'Mia', 'MiHa11', 'Hall', 'Anderson');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('pU1kYsH6', 'Ella', 'ElRi12', 'Rivera', 'Thomas');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('kA3jXuP8', 'Grayson', 'GrCa13', 'Campbell', 'Jackson');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('mI5tQwE2', 'Aria', 'ArMi14', 'Mitchell', 'White');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('lO4sVzG7', 'Caden', 'CaCa15', 'Carter', 'Harris');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('eU6rWxI3', 'Oliver', 'OlRo16', 'Roberts', 'Martin');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('hA9jKpQ4', 'Elijah', 'ElGo17', 'Gomez', 'Thompson');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('cO2gVzR5', 'Amelia', 'HaPh18', 'Phillips', 'Garcia');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('mY7sHuT1', 'Harper', 'MiDi19', 'Diaz', 'Martinez');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('wI4oNpX8', 'Mila', 'LiTu20', 'Hayes', 'Robinson');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('zE1iFvY9', 'Liam', 'JaPa21', 'Turner', 'Clark');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('qU5pKmO3', 'James', 'ChCr22', 'Parker', 'Rodriguez');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('xO8nRbA2', 'Charlotte', 'AiEd23', 'Cruz', 'Lewis');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('fI6hZwY7', 'Aiden', 'AbCo24', 'Edwards', 'Lee');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('jA3lUkP9', 'Abigail', 'EtHa25', 'Collins', 'Walker');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('lE2oQvX4', 'Ethan', 'EvTu26', 'Stewart', 'Hall');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('pU9tNwG5', 'Evelyn', 'AlPa27', 'Morris', 'Allen');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('sT4vXzR7', 'Alexander', 'LuGr28', 'Murphy', 'Young');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('rO7gYhU2', 'Lucas', 'GrAv29', 'Rogers', 'Hernandez');
+insert into Estudiante (Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apelldo) values ('dA1fIvE8', 'Grace', 'ArWr30', 'Reed', 'King');
+
+
