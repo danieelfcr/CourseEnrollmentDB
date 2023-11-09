@@ -20,7 +20,7 @@ begin try
     );
 	end try
 	begin catch
-		print 'Ah ocurrido un error al cargar el archivo :/'
+		print 'Ha ocurrido un error al cargar el archivo :/'
 	end catch
 
 	begin tran
