@@ -53,7 +53,7 @@ Nombre varchar(20) not null
 create Table tx_Asignacion(
 ID_Asignacion int PRIMARY KEY IDENTITY(1,1) not null,
 Fecha_Creacion datetime not null,
-Fecha_Asignacion datetime not null,
+Fecha_Asignacion datetime,
 Estudiante int not null,
 Seccion int not null,
 Estado int not null

@@ -28,7 +28,12 @@ begin try
 			@ApellidosSegun varchar(20),
 			@CodigoSegur varchar(20),
 			@CursoAsign varchar(20),
-			@ID_Estudiante int
+			@ID_Estudiante int,
+			@Fecha_CreacionTX datetime,
+			@Fecha_AsignacionTX datetime,
+			@SeccionTX int,
+			@EstadoTX int
+
 	Declare cDatosAsign cursor for
 	select Codigo_Estudiante, Segundo_Apellido, Codigo_Seguridad, Curso_Asignar
 	from #tIngreso_Estudiantes
@@ -39,6 +44,9 @@ begin try
 	WHILE @@FETCH_STATUS = 0
     BEGIN
 		BEGIN TRY
+		--Obtener fecha-tiempo actual para Fecha_Creacion
+		set @Fecha_CreacionTX = GETDATE()
+
 		--Comprobacion de datos: codigo estudiante, apellido y codigo de seguridad encriptado
 		SET @ID_Estudiante = 0
 		SELECT @ID_Estudiante = ID_Estudiante
@@ -46,13 +54,18 @@ begin try
 		WHERE @CodigoEstudiante = Codigo_Estudiante and @ApellidosSegun = Segundo_Apelldo and @CodigoSegur = Codigo_Seguridad
 
 		IF(@ID_Estudiante > 0)
-		BEGIN
+		BEGIN			
 			--Logica de asignacion
+
 		END
 		ELSE
 		BEGIN
 			print('Datos incorrectos o estudiante no encontrado.')
 		END
+
+		--Insertar valores a tabla tx_asignacion
+		INSERT INTO tx_Asignacion (Fecha_Creacion, Fecha_Asignacion, Estudiante, Seccion, Estado)
+		VALUES (@Fecha_CreacionTX, @Fecha_AsignacionTX, @ID_Estudiante, @SeccionTX, @EstadoTX)
 
 		END TRY
 
