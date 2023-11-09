@@ -23,7 +23,28 @@ begin try
 		print 'Ah ocurrido un error al cargar el archivo :/'
 	end catch
 
+	begin tran
+	declare @CodigoEstudiante varchar(20),
+			@ApellidosSegun varchar(20),
+			@CodigoSegur varchar(20),
+			@CursoAsign varchar(20)
+	Declare cDatosAsign cursor for
+	select Codigo_Estudiante, Segundo_Apellido, Codigo_Seguridad, Curso_Asignar
+	from #tIngreso_Estudiantes
 
+	open cDatosAsign;
+	fetch next from cDatosAsign into @CodigoEstudiante, @ApellidosSegun, @CodigoSegur, @CursoAsign
+	
+	WHILE @@FETCH_STATUS = 0
+    BEGIN
 
-END
+	fetch next from cDatosAsign into @CodigoEstudiante, @ApellidosSegun, @CodigoSegur, @CursoAsign
+	end
+	close cDatosAsign;
+	deallocate cDatosAsign;
 
+	if @@TRANCOUNT  > 0
+		COMMIT TRAN;
+
+	print 'Proceso finalizado exitosamente.'
+END;
