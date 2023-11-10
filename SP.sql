@@ -108,6 +108,51 @@ begin try
 						FROM	PromedioNotasPorEstudiante p
 						ORDER BY p.PromedioNotas ASC;
 
+						SELECT @PromedioActual = AVG(CAST(Nota AS FLOAT))
+						FROM Historial_Cursos h
+						join Prerrequisito p on h.Curso = p.Prerrequisito
+						WHERE Estudiante = @ID_Estudiante and p.Curso = @vCursoAsignacion
+
+						if(@PromedioActual <= @PromedioMenor)
+						begin
+							if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec2) < @vCupoTec2)
+							begin
+								set @SeccionTX = @vSeccionTec2
+								set @EstadoTx = 1
+								set @vFecha_AsignacionTX = GETDATE()
+							end
+							else
+							begin
+								set @SeccionTX = @vSeccionTec2
+								set @EstadoTx = 2
+							end
+						end
+						else
+						begin
+							if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec2) < @vCupoTec2)
+							begin
+								update tx_Asignacion
+										set Estado = 3
+										Seccion = @vSeccionTec2
+										Fecha_Asignacion = GETDATE()
+									where Estudiante = @vEstudianteMenor
+
+									set @SeccionTX = @vSeccionTec1
+									set @EstadoTx = 1
+									set @vFecha_AsignacionTX = GETDATE()
+							end
+							else
+							begin
+								update tx_Asignacion
+								set Estado = 2
+									Seccion = @vSeccionTec2
+									Fecha_Asignacion = null
+								where Estudiante = @vEstudianteMenor
+
+								set @SeccionTX = @vSeccionTec1
+								set @EstadoTx = 1
+								set @vFecha_AsignacionTX = GETDATE()
+							end
 
 					end
 				end
