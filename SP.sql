@@ -32,7 +32,13 @@ begin try
 			@vFecha_CreacionTX datetime,
 			@vFecha_AsignacionTX datetime,
 			@vSeccionTX int,
-			@vEstadoTX int
+			@vEstadoTX int,
+			@vSeccionTec1 int,
+			@vSeccionTec2 int,
+			@vSeccionAdmin int,
+			@vCupoAdmin int,
+			@vCupoTec1 int,
+			@vCupoTec2 int
 
 	Declare cDatosAsign cursor for
 	select Codigo_Estudiante, Segundo_Apellido, Codigo_Seguridad, Curso_Asignar
@@ -56,14 +62,50 @@ begin try
 		-- 2. selección del curso
 		IF(@vID_Estudiante > 0)
 		BEGIN		
-			IF (SELECT COUNT(*) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso) >= 2)
+			IF ((SELECT COUNT(*) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso)) >= 2)
 			BEGIN
-			-- curso es de tipo tecnico
+				-- curso es de tipo tecnico
+				select TOP 1 @vSeccionTec1 = s.ID_Seccion, @vCupoTec1 = s.Cupo
+				from Seccion s
+				where s.ID_Curso = @vCursoAsignacion
+
+				select TOP 1 @vSeccionTec2 = s.ID_Seccion, @vCupoTec2 = s.Cupo 
+				from Seccion s
+				where s.ID_Curso = @vCursoAsignacion
+				ORDER BY s.ID_Seccion OFFSET 1 ROW
+				FETCH NEXT 1 ROW ONLY;
+
+				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
+				begin
+				end
+				else
+				begin
+				end
 			END
 			ELSE
 			BEGIN 
 			-- curso es de tipo administrativo
+				select @vSeccionAdmin = s.ID_Seccion, @vCupoAdmin = s.Cupo  
+				from Seccion s
+				where s.ID_Curso = @vCursoAsignacion
 
+				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
+				begin
+				end
+				else
+				begin
+					if((select count(1) from tx_Asignacion a where a.Seccion = @vSeccionAdmin and a.Estado = 1 ) = @vCupoAdmin)
+					begin
+						set @SeccionTX = @vSeccionAdmin
+						set @EstadoTx = 2
+					end
+					else
+					begin
+						set @SeccionTX = @vSeccionAdmin
+						set @EstadoTx = 1
+						set @vFecha_AsignacionTX = GETDATE()
+					end
+				end
 			END
 
 			--Logica de asignacion
