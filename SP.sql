@@ -80,6 +80,36 @@ begin try
 
 				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
 				begin
+					if(dbo.fncEstudianteCumplePrerrequisitos = 1)
+					begin
+						if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec1) < @vCupoTec1)
+						begin
+							set @SeccionTX = @vSeccionAdmin
+							set @EstadoTx = 1
+							set @vFecha_AsignacionTX = GETDATE()	
+						end
+					end
+					else
+					begin
+						WITH PromedioNotasPorEstudiante AS (
+						SELECT h.Estudiante, AVG(CAST(h.Nota AS FLOAT)) AS PromedioNotas
+						FROM Historial_Cursos h
+						join Prerrequisito p on h.Curso = p.Prerrequisito
+						WHERE EXISTS (
+							SELECT 1
+							FROM tx_Asignacion a
+							JOIN Seccion s ON a.Seccion = s.ID_Seccion
+							WHERE	a.Estudiante = h.Estudiante	AND s.ID_Curso = @vCursoAsignacion
+							)
+						and p.Curso = @vCursoAsignacion
+						GROUP BY h.Estudiante
+						)
+						SELECT TOP 1 @vPromedioMenor = p.PromedioNotas, @vEstudianteMenor = p.Estudiante
+						FROM	PromedioNotasPorEstudiante p
+						ORDER BY p.PromedioNotas ASC;
+
+
+					end
 				end
 				else
 				begin
@@ -97,8 +127,8 @@ begin try
 						WHERE EXISTS (
 							SELECT 1
 							FROM tx_Asignacion a
-							INNER JOIN Seccion s ON a.Seccion = s.ID_Seccion
-							WHERE	a.Estudiante = h.Estudiante	AND s.ID_Curso = @ID_CursoEspecifico
+							JOIN Seccion s ON a.Seccion = s.ID_Seccion
+							WHERE	a.Estudiante = h.Estudiante	AND s.ID_Curso = @vCursoAsignacion
 							)
 						GROUP BY h.Estudiante
 						)
@@ -163,7 +193,23 @@ begin try
 
 				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
 				begin
-					
+					if(dbo.fncEstudianteCumplePrerrequisitos = 1)
+					begin
+						if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec1) = @vCupoAdmin)
+						begin
+							set @SeccionTX = @vSeccionAdmin
+							set @EstadoTx = 2
+						end
+						else
+						begin
+							set @SeccionTX = @vSeccionAdmin
+							set @EstadoTx = 1
+							set @vFecha_AsignacionTX = GETDATE()
+						end
+					end
+					else
+					begin
+					end
 				end
 				else
 				begin
