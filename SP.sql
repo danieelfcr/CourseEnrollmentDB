@@ -40,7 +40,8 @@ begin try
 			@vCupoTec1 int,
 			@vCupoTec2 int,
 			@vPromedioMenor float,
-			@vPromedioActual float
+			@vPromedioActual float,
+			@vEstudianteMenor int
 
 	Declare cDatosAsign cursor for
 	select Codigo_Estudiante, Segundo_Apellido, Codigo_Seguridad, Curso_Asignar
@@ -82,7 +83,7 @@ begin try
 				end
 				else
 				begin
-					if((select count(1) from tx_Asignacion a where a.Seccion = @vSeccionTec1 and a.Estado = 1 ) < @vCupoTec1)
+					if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec1) < @vCupoTec1)
 					begin
 						set @SeccionTX = @vSeccionAdmin
 						set @EstadoTx = 1
@@ -90,8 +91,66 @@ begin try
 					end
 					else
 					begin
+						WITH PromedioNotasPorEstudiante AS (
+						SELECT h.Estudiante, AVG(CAST(h.Nota AS FLOAT)) AS PromedioNotas
+						FROM Historial_Cursos h
+						WHERE EXISTS (
+							SELECT 1
+							FROM tx_Asignacion a
+							INNER JOIN Seccion s ON a.Seccion = s.ID_Seccion
+							WHERE	a.Estudiante = h.Estudiante	AND s.ID_Curso = @ID_CursoEspecifico
+							)
+						GROUP BY h.Estudiante
+						)
+						SELECT TOP 1 @vPromedioMenor = p.PromedioNotas, @vEstudianteMenor = p.Estudiante
+						FROM	PromedioNotasPorEstudiante p
+						ORDER BY p.PromedioNotas ASC;
 
-						if((select count(1) from tx_Asignacion a where a.Seccion = @vSeccionTec2 and a.Estado = 1 ) < @vCupoTec2)
+						SELECT @PromedioActual = AVG(CAST(Nota AS FLOAT))
+						FROM Historial_Cursos
+						WHERE Estudiante = @ID_Estudiante;
+
+						if(@PromedioActual <= @PromedioMenor)
+						begin
+							if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec2) < @vCupoTec2)
+							begin
+								set @SeccionTX = @vSeccionTec2
+								set @EstadoTx = 1
+								set @vFecha_AsignacionTX = GETDATE()
+							end
+							else
+							begin
+								set @SeccionTX = @vSeccionTec2
+								set @EstadoTx = 2
+							end
+						end
+						else
+						begin
+							if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec2) < @vCupoTec2)
+							begin
+								update tx_Asignacion
+										set Estado = 3
+										Seccion = @vSeccionTec2
+										Fecha_Asignacion = GETDATE()
+									where Estudiante = @vEstudianteMenor
+
+									set @SeccionTX = @vSeccionTec1
+									set @EstadoTx = 1
+									set @vFecha_AsignacionTX = GETDATE()
+							end
+							else
+							begin
+								update tx_Asignacion
+								set Estado = 2
+									Seccion = @vSeccionTec2
+									Fecha_Asignacion = null
+								where Estudiante = @vEstudianteMenor
+
+								set @SeccionTX = @vSeccionTec1
+								set @EstadoTx = 1
+								set @vFecha_AsignacionTX = GETDATE()
+							end
+						end
 					end
 				end
 			END
@@ -104,10 +163,11 @@ begin try
 
 				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
 				begin
+					
 				end
 				else
 				begin
-					if((select count(1) from tx_Asignacion a where a.Seccion = @vSeccionAdmin and a.Estado = 1 ) = @vCupoAdmin)
+					if(dbo.fncObtenerCantidadEstudiantesSeccion(@vSeccionTec1) = @vCupoAdmin)
 					begin
 						set @SeccionTX = @vSeccionAdmin
 						set @EstadoTx = 2
