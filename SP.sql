@@ -38,7 +38,9 @@ begin try
 			@vSeccionAdmin int,
 			@vCupoAdmin int,
 			@vCupoTec1 int,
-			@vCupoTec2 int
+			@vCupoTec2 int,
+			@vPromedioMenor float,
+			@vPromedioActual float
 
 	Declare cDatosAsign cursor for
 	select Codigo_Estudiante, Segundo_Apellido, Codigo_Seguridad, Curso_Asignar
@@ -80,6 +82,17 @@ begin try
 				end
 				else
 				begin
+					if((select count(1) from tx_Asignacion a where a.Seccion = @vSeccionTec1 and a.Estado = 1 ) < @vCupoTec1)
+					begin
+						set @SeccionTX = @vSeccionAdmin
+						set @EstadoTx = 1
+						set @vFecha_AsignacionTX = GETDATE()	
+					end
+					else
+					begin
+
+						if((select count(1) from tx_Asignacion a where a.Seccion = @vSeccionTec2 and a.Estado = 1 ) < @vCupoTec2)
+					end
 				end
 			END
 			ELSE
