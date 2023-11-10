@@ -24,37 +24,48 @@ begin try
 	end catch
 
 	begin tran
-	declare @CodigoEstudiante varchar(20),
-			@ApellidosSegun varchar(20),
-			@CodigoSegur varchar(20),
-			@CursoAsign varchar(20),
-			@ID_Estudiante int,
-			@Fecha_CreacionTX datetime,
-			@Fecha_AsignacionTX datetime,
-			@SeccionTX int,
-			@EstadoTX int
+	declare @vCodigoEstudiante varchar(20),
+			@vSegundoApellido varchar(20),
+			@vCodigoSeguridad varchar(20),
+			@vCursoAsignacion varchar(20),
+			@vID_Estudiante int,
+			@vFecha_CreacionTX datetime,
+			@vFecha_AsignacionTX datetime,
+			@vSeccionTX int,
+			@vEstadoTX int
 
 	Declare cDatosAsign cursor for
 	select Codigo_Estudiante, Segundo_Apellido, Codigo_Seguridad, Curso_Asignar
 	from #tIngreso_Estudiantes
 
 	open cDatosAsign;
-	fetch next from cDatosAsign into @CodigoEstudiante, @ApellidosSegun, @CodigoSegur, @CursoAsign
+	fetch next from cDatosAsign into @vCodigoEstudiante, @vSegundoApellido, @vCodigoSeguridad, @vCursoAsignacion
 	
 	WHILE @@FETCH_STATUS = 0
     BEGIN
 		BEGIN TRY
 		--Obtener fecha-tiempo actual para Fecha_Creacion
-		set @Fecha_CreacionTX = GETDATE()
+		set @vFecha_CreacionTX = GETDATE()
 
-		--Comprobacion de datos: codigo estudiante, apellido y codigo de seguridad encriptado
-		SET @ID_Estudiante = 0
-		SELECT @ID_Estudiante = ID_Estudiante
-		FROM Estudiante
-		WHERE @CodigoEstudiante = Codigo_Estudiante and @ApellidosSegun = Segundo_Apelldo and @CodigoSegur = Codigo_Seguridad
+		-- 1. Comprobacion de datos: codigo estudiante, apellido y codigo de seguridad encriptado
+		SET @vID_Estudiante = 0
+		SELECT @vID_Estudiante = e.ID_Estudiante
+		FROM Estudiante e
+		WHERE @vCodigoEstudiante = e.Codigo_Estudiante and @vSegundoApellido = e.Segundo_Apelldo and @vCodigoSeguridad = e.Codigo_Seguridad
 
-		IF(@ID_Estudiante > 0)
-		BEGIN			
+		-- 2. selección del curso
+		IF(@vID_Estudiante > 0)
+		BEGIN		
+			IF (SELECT COUNT(*) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso) >= 2)
+			BEGIN
+			-- curso es de tipo tecnico
+			END
+			ELSE
+			BEGIN 
+			-- curso es de tipo administrativo
+
+			END
+
 			--Logica de asignacion
 			/* 1. A partir del CSV obtenemos el curso, con el curso, obtenemos el ID del tipo que pertence (Tecnico o Admin)
 			   2. Con ese ID comparamos si es tecnico o admin
@@ -97,7 +108,7 @@ begin try
 
 		END CATCH
 		
-	fetch next from cDatosAsign into @CodigoEstudiante, @ApellidosSegun, @CodigoSegur, @CursoAsign
+	fetch next from cDatosAsign into @CodigoEstudiante, @vSegundoApellido, @vCodigoSeguridad, @vCursoAsignacion
 	end
 	close cDatosAsign;
 	deallocate cDatosAsign;
