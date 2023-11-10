@@ -9,7 +9,7 @@ Codigo_Seguridad varchar(20) not null,
 Nombre varchar(20) not null,
 Codigo_Estudiante varchar(8) not null,
 Primer_Apellido varchar(20) not null,
-Segundo_Apelldo varchar(20) not null
+Segundo_Apellido varchar(20) not null
 );
 
 --Conectada a Curso
