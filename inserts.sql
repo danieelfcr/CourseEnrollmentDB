@@ -32,165 +32,167 @@ insert into Estudiante (ID_Estudiante, Codigo_Seguridad, Nombre, Codigo_Estudian
 insert into Estudiante (ID_Estudiante, Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apellido) values (30, 'dA1fIvE8', 'Grace', 'ArWr30', 'Reed', 'King');
 
 -- INSERTS TABLA TIPO (TIPO DE CURSO)  -> YA
-insert into Tipo(Cantidad_Seccion,Nombre) values (1,"Administrativo");
-insert into Tipo(Cantidad_Seccion,Nombre) values (2,"Técnico");
+insert into Tipo(Cantidad_Seccion,Nombre) values (1,'Administrativo');
+insert into Tipo(Cantidad_Seccion,Nombre) values (2,'Técnico');
 
 -- INSERTS TABLA CURSO -> YA
-insert into Curso(Nombre,Tipo) values ("Introducción a la Programación",2);
+insert into Curso(Nombre,Tipo) values ('Introducción a la Programación',2);
 ---curso 2
-insert into Curso(Nombre,Tipo) values ("Estrategias de Razonamiento",1);
+insert into Curso(Nombre,Tipo) values ('Estrategias de Razonamiento',1);
 ---curso 3
-insert into Curso(Nombre,Tipo) values ("Matemática Discreta I",1);
+insert into Curso(Nombre,Tipo) values ('Matemática Discreta I',1);
 ---curso 4
-insert into Curso(Nombre,Tipo) values ("Programación Avanzada",2);
+insert into Curso(Nombre,Tipo) values ('Programación Avanzada',2);
 ---curso 5
-insert into Curso(Nombre,Tipo) values ("Matemática Discreta II",1);
+insert into Curso(Nombre,Tipo) values ('Matemática Discreta II',1);
 ---curso 6
-insert into Curso(Nombre,Tipo) values ("Organización Computacional",2);
+insert into Curso(Nombre,Tipo) values ('Organización Computacional',2);
 ---curso 7
-insert into Curso(Nombre,Tipo) values ("Teoría de Sistemas",1);
+insert into Curso(Nombre,Tipo) values ('Teoría de Sistemas',1);
 ---curso 8
-insert into Curso(Nombre,Tipo) values ("Bases de Datos I",2);
+insert into Curso(Nombre,Tipo) values ('Bases de Datos I',2);
 ---curso 9
-insert into Curso(Nombre,Tipo) values ("Base de Datos II",2);
+insert into Curso(Nombre,Tipo) values ('Base de Datos II',2);
 ---curso 10
-insert into Curso(Nombre,Tipo) values ("Redes",2);
+insert into Curso(Nombre,Tipo) values ('Redes',2);
+
 -- INSERTS TABLA HISTORIAL_CURSOS
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	1	,	1	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	1	,	2	,	72	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	1	,	67	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	2	,	97	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	3	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	4	,	84	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	3	,	1	,	98	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	3	,	2	,	75	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	4	,	1	,	83	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	4	,	2	,	74	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	4	,	3	,	78	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	1	,	83	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	2	,	87	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	3	,	68	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	4	,	74	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	5	,	91	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	1	,	95	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	2	,	86	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	3	,	77	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	4	,	63	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	5	,	82	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	1	,	99	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	2	,	74	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	3	,	66	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	4	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	8	,	1	,	54	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	8	,	2	,	75	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	9	,	1	,	94	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	1	,	89	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	2	,	86	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	3	,	68	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	4	,	86	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	5	,	73	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	6	,	92	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	1	,	87	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	2	,	76	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	3	,	82	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	4	,	88	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	5	,	98	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	6	,	83	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	7	,	92	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	8	,	94	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	12	,	1	,	88	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	12	,	2	,	70	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	12	,	3	,	78	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	13	,	1	,	91	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	13	,	2	,	76	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	13	,	3	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	1	,	81	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	2	,	69	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	3	,	99	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	4	,	93	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	5	,	69	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	15	,	1	,	77	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	15	,	2	,	96	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	15	,	3	,	93	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	16	,	1	,	94	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	16	,	2	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	16	,	3	,	72	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	17	,	1	,	96	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	17	,	2	,	100	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	18	,	1	,	84	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	1	,	89	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	2	,	78	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	3	,	98	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	4	,	76	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	5	,	98	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	1	,	84	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	2	,	99	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	3	,	85	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	4	,	82	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	21	,	1	,	87	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	21	,	2	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	1	,	96	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	2	,	73	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	3	,	89	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	4	,	94	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	23	,	1	,	57	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	23	,	2	,	77	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	1	,	76	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	2	,	99	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	3	,	66	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	4	,	87	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	5	,	68	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	1	,	64	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	2	,	71	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	3	,	75	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	4	,	93	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	26	,	1	,	68	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	1	,	83	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	2	,	79	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	3	,	46	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	4	,	86	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	1	,	61	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	2	,	66	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	3	,	75	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	4	,	65	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	5	,	88	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	29	,	1	,	98	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	29	,	2	,	64	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	1	,	62	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	2	,	95	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	3	,	93	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	4	,	67	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	5	,	93	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	6	,	92	)
-insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	7	,	63	)
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	1	,	1	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	1	,	2	,	72	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	1	,	67	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	2	,	97	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	3	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	4	,	84	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	3	,	1	,	98	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	3	,	2	,	75	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	4	,	1	,	83	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	4	,	2	,	74	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	4	,	3	,	78	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	1	,	83	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	2	,	87	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	3	,	68	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	4	,	74	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	5	,	5	,	91	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	1	,	95	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	2	,	86	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	3	,	77	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	4	,	63	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	6	,	5	,	82	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	1	,	99	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	2	,	74	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	3	,	66	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	7	,	4	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	8	,	1	,	54	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	8	,	2	,	75	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	9	,	1	,	94	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	1	,	89	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	2	,	86	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	3	,	68	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	4	,	86	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	5	,	73	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	10	,	6	,	92	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	1	,	87	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	2	,	76	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	3	,	82	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	4	,	88	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	5	,	98	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	6	,	83	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	7	,	92	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	11	,	8	,	94	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	12	,	1	,	88	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	12	,	2	,	70	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	12	,	3	,	78	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	13	,	1	,	91	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	13	,	2	,	76	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	13	,	3	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	1	,	81	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	2	,	69	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	3	,	99	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	4	,	93	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	14	,	5	,	69	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	15	,	1	,	77	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	15	,	2	,	96	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	15	,	3	,	93	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	16	,	1	,	94	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	16	,	2	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	16	,	3	,	72	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	17	,	1	,	96	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	17	,	2	,	100	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	18	,	1	,	84	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	1	,	89	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	2	,	78	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	3	,	98	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	4	,	76	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	19	,	5	,	98	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	1	,	84	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	2	,	99	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	3	,	85	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	20	,	4	,	82	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	21	,	1	,	87	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	21	,	2	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	1	,	96	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	2	,	73	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	3	,	89	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	22	,	4	,	94	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	23	,	1	,	57	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	23	,	2	,	77	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	1	,	76	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	2	,	99	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	3	,	66	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	4	,	87	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	24	,	5	,	68	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	1	,	64	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	2	,	71	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	3	,	75	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	25	,	4	,	93	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	26	,	1	,	68	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	1	,	83	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	2	,	79	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	3	,	46	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	27	,	4	,	86	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	1	,	61	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	2	,	66	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	3	,	75	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	4	,	65	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	28	,	5	,	88	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	29	,	1	,	98	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	29	,	2	,	64	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	1	,	62	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	2	,	95	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	3	,	93	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	4	,	67	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	5	,	93	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	6	,	92	)	;
+insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	7	,	63	)	;
+
 
 
 -- INSERTS TABLA SECCION
-insert into Seccion(	ID_Curso	,	Cupo	)values (	1	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	1	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	2	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	3	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	4	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	4	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	5	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	6	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	6	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	7	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	8	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	8	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	9	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	9	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	10	,	30	)
-insert into Seccion(	ID_Curso	,	Cupo	)values (	10	,	30	)
+insert into Seccion(	ID_Curso	,	Cupo	)values (	1	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	1	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	2	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	3	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	4	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	4	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	5	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	6	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	6	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	7	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	8	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	8	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	9	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	9	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	10	,	30	);
+insert into Seccion(	ID_Curso	,	Cupo	)values (	10	,	30	);
 
 
 
 -- INSERTS TABLA ESTADO_ASIGNACION
 
-insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	0	,	"No ha cumplido con los prerrequisitos"	,	"Rechazado"	)
-insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	1	,	"Asignación exitosa"	,	"Aprobado"	)
-insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	2	,	"Cupos llenos. Espere actualizaciones en los cupos"	,	"Lista de Espera"	)
-insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	3	,	"Se ha cambiado de sección debido a promedio."	,	"Cambio de sección"	)
+insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	0	,	'No ha cumplido con los prerrequisitos'	,	'Rechazado'	);
+insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	1	,	'Asignación exitosa'	,	'Aprobado'	);
+insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	2	,	'Cupos llenos. Espere actualizaciones en los cupos'	,	'Lista de Espera'	);
+insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	3	,	'Se ha cambiado de sección debido a promedio.'	,	'Cambio de sección'	);
 
 
 -- INSERTS TABLA PRERREQUISITO -> YA
