@@ -64,7 +64,7 @@ begin try
 		SET @vID_Estudiante = 0
 		SELECT @vID_Estudiante = e.ID_Estudiante
 		FROM Estudiante e
-		WHERE @vCodigoEstudiante = e.Codigo_Estudiante and @vSegundoApellido = e.Segundo_Apelldo and @vCodigoSeguridad = e.Codigo_Seguridad
+		WHERE @vCodigoEstudiante = e.Codigo_Estudiante and @vSegundoApellido = e.Segundo_Apellido and @vCodigoSeguridad = e.Codigo_Seguridad
 
 		-- 2. selección del curso
 		IF(@vID_Estudiante > 0)
