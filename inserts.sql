@@ -31,7 +31,7 @@ insert into Estudiante (ID_Estudiante, Codigo_Seguridad, Nombre, Codigo_Estudian
 insert into Estudiante (ID_Estudiante, Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apellido) values (29, 'rO7gYhU2', 'Lucas', 'GrAv29', 'Rogers', 'Hernandez');
 insert into Estudiante (ID_Estudiante, Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apellido) values (30, 'dA1fIvE8', 'Grace', 'ArWr30', 'Reed', 'King');
 
--- INSERTS TABLA TIPO (TIPO DE CURSO)
+-- INSERTS TABLA TIPO (TIPO DE CURSO)  
 
 -- INSERTS TABLA CURSO
 
@@ -41,7 +41,7 @@ insert into Estudiante (ID_Estudiante, Codigo_Seguridad, Nombre, Codigo_Estudian
 
 -- INSERTS TABLA ESTADO_ASIGNACION
 
--- INSERTS TABLA PRERREQUISITO
+-- INSERTS TABLA PRERREQUISITO -> YA
 
 
 
