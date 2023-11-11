@@ -70,7 +70,7 @@ ID_Prerrequisito int PRIMARY KEY IDENTITY(1,1) not null,
 Curso int not null,
 Prerrequisito int not null,
 Estado bit not null
-constraint pk_curso foreign key (Curso) references Curso (ID_Curso),
+constraint pk_curso_pp foreign key (Curso) references Curso (ID_Curso),
 constraint pk_curso_prerequisto foreign key (Prerrequisito) references Curso (ID_Curso)
 );
 
