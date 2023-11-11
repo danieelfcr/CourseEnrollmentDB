@@ -2,7 +2,8 @@ CREATE PROCEDURE uspUploadData  --Nombre del SP
 AS
 BEGIN
 	SET NOCOUNT ON; --No muestra las filas aceptadas	
-	SET TRAN ISOLATION LEVEL SERIALIZABLE	--Nivel de aislamiento ?
+	SET TRAN ISOLATION LEVEL READ UNCOMMITTED	/*Nivel de aislamiento READ UNCOMMITED para realizar cambios en cupo mientras
+	mientras se realiza la transaccion*/
 
 	--Creacion tabla temporal para guardar contenido de CSV
 	create table #tIngreso_Estudiantes(
