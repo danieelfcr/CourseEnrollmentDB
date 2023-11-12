@@ -15,7 +15,7 @@ BEGIN
 begin try 
 	--Insertar data de CSV a tabla
     BULK INSERT #tIngreso_Estudiantes
-    FROM '‪C:\Input.csv'
+    FROM 'C:\Input.csv'
     WITH ( FORMAT = 'CSV',
         FIELDTERMINATOR = ',',
         ROWTERMINATOR = '\n',
@@ -69,7 +69,7 @@ begin try
 		-- 2. selección del curso
 		IF(@vID_Estudiante > 0)
 		BEGIN		
-			IF ((SELECT COUNT(*) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso)) >= 2)
+			IF ((SELECT COUNT(1) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso)) = 2)
 			BEGIN
 				-- curso es de tipo tecnico
 				-- Se toma la información de la primera sección del curso
@@ -78,7 +78,7 @@ begin try
 				where s.ID_Curso = @vCursoAsignacion
 
 				-- Se toma la información de la segunda sección del curso
-				select TOP 1 @vSeccionTec2 = s.ID_Seccion, @vCupoTec2 = s.Cupo 
+				select @vSeccionTec2 = s.ID_Seccion, @vCupoTec2 = s.Cupo 
 				from Seccion s
 				where s.ID_Curso = @vCursoAsignacion
 				ORDER BY s.ID_Seccion OFFSET 1 ROW	-- Tomar el segundo resultado con este comando
@@ -323,21 +323,24 @@ begin try
 		END
 		ELSE
 		BEGIN
-			set @vEstadoTX = 4
-			print('Datos incorrectos o estudiante no encontrado.')
+			
+			print('Datos incorrectos o estudiante no encontrado.' )
 		END
 
 		--Insertar valores a tabla tx_asignacion
-		INSERT INTO tx_Asignacion (Fecha_Creacion, Fecha_Asignacion, Estudiante, Seccion, Estado)
-		VALUES (@vFecha_CreacionTX, @vFecha_AsignacionTX, @vID_Estudiante, @vSeccionTX, @vEstadoTX)
-
+		IF (@vID_Estudiante > 0)
+		BEGIN
+			INSERT INTO tx_Asignacion (Fecha_Creacion, Fecha_Asignacion, Estudiante, Seccion, Estado)
+			VALUES (@vFecha_CreacionTX, @vFecha_AsignacionTX, @vID_Estudiante, @vSeccionTX, @vEstadoTX)
+		END
 		END TRY
 
 		BEGIN CATCH
+			print(@@ERROR)
 			print('Ha ocurrido un error en el proceso')
 		END CATCH
 		
-	fetch next from cDatosAsign into @CodigoEstudiante, @vSegundoApellido, @vCodigoSeguridad, @vCursoAsignacion
+	fetch next from cDatosAsign into @vCodigoEstudiante, @vSegundoApellido, @vCodigoSeguridad, @vCursoAsignacion
 	end
 	close cDatosAsign;
 	deallocate cDatosAsign;
