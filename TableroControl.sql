@@ -32,7 +32,9 @@ order by cu.Nombre, se.Numero_Seccion*/
 
 
 --Vista 2: Promedio de Tiempo de Solicitud
---Calcula el promedio de tiempo que lleva procesar cada solicitud de asignación.CREATE VIEW Vista_TiempoPromedioSolicitud ASSELECT AVG(DATEDIFF(hour, Fecha_Creacion, Fecha_Asignacion)) as PromedioTiempo
+--Calcula el promedio de tiempo que lleva procesar cada solicitud de asignación.
+CREATE VIEW Vista_TiempoPromedioSolicitud AS
+SELECT AVG(DATEDIFF(hour, Fecha_Creacion, Fecha_Asignacion)) as PromedioTiempo
 FROM tx_Asignacion
 WHERE Fecha_Asignacion is not null
 

@@ -87,9 +87,7 @@ id | id_curso | id_curso | estado_prerrequisito
 2 | 3 | 2 | 0 --> indica que el curso 3 tuvo de prerrequisito en algún momento al curso 2 pero el estado está inactivo (0) .> eliminación lógica
 
 así con un montón xd
-
-
---(Pendiente) Conectada a Curso
+*/
 create Table Prerrequisito(
 ID_Prerrequisito int PRIMARY KEY IDENTITY(1,1) not null,
 curso int not null
@@ -104,4 +102,4 @@ Prerrequisto int not null
 constraint pk_curso_p foreign key (Curso) references Curso (ID_Curso),
 constraint pk_prerrequisto foreign key (Prerrequisto) references Prerrequisito
 );
-*/
+
