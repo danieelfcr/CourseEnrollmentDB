@@ -46,9 +46,9 @@ constraint pk_curso_s foreign key (ID_Curso) references Curso(ID_Curso)
 );
 
 --Conectado a tx_Asignacion
--- 0 = Rechazado, 1 = Aprobado, 2 = Lista de espera, 3 = Cambio de seccion
+-- 0 = Rechazado, 1 = Aprobado, 2 = Lista de espera, 3 = Cambio de seccion, 4 = No se encontraron los datos el estudiante
 create Table Estado_Asignacion(
-ID_Estado_Asignacion int PRIMARY KEY IDENTITY(1,1) not null,
+ID_Estado_Asignacion int PRIMARY KEY IDENTITY(0,1) not null,
 Descripcion  varchar(100) not null,
 Nombre varchar(20) not null
 );
