@@ -5,11 +5,11 @@ go
 --Conectada a tx_Asignacion e Historial_Cursos
 create table Estudiante(
 ID_Estudiante int PRIMARY KEY IDENTITY(1,1) not null,
-Codigo_Seguridad varchar(20) not null,
-Nombre varchar(20) not null,
+Codigo_Seguridad varchar(70) not null,
+Nombre varchar(70) not null,
 Codigo_Estudiante varchar(8) not null,
-Primer_Apellido varchar(20) not null,
-Segundo_Apellido varchar(20) not null
+Primer_Apellido varchar(70) not null,
+Segundo_Apellido varchar(70) not null
 );
 
 --Conectada a Curso
@@ -22,7 +22,7 @@ Nombre varchar(20) not null
 --Conectada a Seccion, Prerrequisito, Tipo e Historial_Curso
 Create Table Curso(
 ID_Curso int PRIMARY KEY IDENTITY(1,1) not null,
-Nombre varchar(20) not null,
+Nombre varchar(70) not null,
 Tipo int not null
 constraint pk_tipo foreign key (Tipo) references Tipo (ID_Tipo)
 );
@@ -50,7 +50,7 @@ constraint pk_curso_s foreign key (ID_Curso) references Curso(ID_Curso)
 create Table Estado_Asignacion(
 ID_Estado_Asignacion int PRIMARY KEY IDENTITY(0,1) not null,
 Descripcion  varchar(100) not null,
-Nombre varchar(20) not null
+Nombre varchar(70) not null
 );
 
 --Conectada a Estudiante, Estado_Asignacion y Seccion 

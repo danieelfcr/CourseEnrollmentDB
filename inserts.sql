@@ -30,11 +30,14 @@ insert into Estudiante ( Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Ape
 insert into Estudiante ( Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apellido) values ( 'sT4vXzR7', 'Alexander', 'LuGr28', 'Murphy', 'Young');
 insert into Estudiante ( Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apellido) values ( 'rO7gYhU2', 'Lucas', 'GrAv29', 'Rogers', 'Hernandez');
 insert into Estudiante ( Codigo_Seguridad, Nombre, Codigo_Estudiante, Primer_Apellido, Segundo_Apellido) values ( 'dA1fIvE8', 'Grace', 'ArWr30', 'Reed', 'King');
+
 -- INSERTS TABLA TIPO (TIPO DE CURSO)  -> YA
+
 insert into Tipo(Cantidad_Seccion,Nombre) values (1,'Administrativo');
 insert into Tipo(Cantidad_Seccion,Nombre) values (2,'Técnico');
 
 -- INSERTS TABLA CURSO -> YA
+
 insert into Curso(Nombre,Tipo) values ('Introducción a la Programación',2);
 ---curso 2
 insert into Curso(Nombre,Tipo) values ('Estrategias de Razonamiento',1);
@@ -56,6 +59,7 @@ insert into Curso(Nombre,Tipo) values ('Base de Datos II',2);
 insert into Curso(Nombre,Tipo) values ('Redes',2);
 
 -- INSERTS TABLA HISTORIAL_CURSOS
+
 insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	1	,	1	,	79	)	;
 insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	1	,	2	,	72	)	;
 insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	2	,	1	,	67	)	;
@@ -167,22 +171,23 @@ insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	7	,	63	)
 
 
 -- INSERTS TABLA SECCION
-insert into Seccion(	ID_Curso	,	Cupo	)values (	1	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	1	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	2	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	3	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	4	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	4	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	5	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	6	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	6	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	7	,	12	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	8	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	8	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	9	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	9	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	10	,	7	)	;
-insert into Seccion(	ID_Curso	,	Cupo	)values (	10	,	7	)	;
+
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion 	)values (	1	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion 	)values (	1	,	7,	2 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	2	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	3	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	4	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	4	,	7,	2 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	5	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	6	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	6	,	7,	2 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	7	,	1,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	8	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	8	,	7,	2 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	9	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	9	,	7,	2 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	10	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	10	,	7,	2 )	;
 
 
 
@@ -196,6 +201,7 @@ insert into Estado_Asignacion(Descripcion	,	Nombre	)values ('Datos de estudiante
 
 
 -- INSERTS TABLA PRERREQUISITO -> YA
+
 insert into Prerrequisito(Curso, Prerrequisito, Estado) values (3,1,1);
 insert into Prerrequisito(Curso, Prerrequisito, Estado) values (3,2,1);
 ---curso 4
