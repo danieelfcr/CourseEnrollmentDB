@@ -172,21 +172,21 @@ insert into Historial_Cursos(	Estudiante 	,	Curso	,	Nota	)values (	30	,	7	,	63	)
 
 -- INSERTS TABLA SECCION
 
-insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion 	)values (	1	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion 	)values (	1	,	2,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion 	)values (	1	,	7,	2 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	2	,	7,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	3	,	7,	1 )	;
-insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	4	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	4	,	2,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	4	,	7,	2 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	5	,	7,	1 )	;
-insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	6	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	6	,	2,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	6	,	7,	2 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	7	,	1,	1 )	;
-insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	8	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	8	,	2,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	8	,	7,	2 )	;
-insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	9	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	9	,	2,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	9	,	7,	2 )	;
-insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	10	,	7,	1 )	;
+insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	10	,	2,	1 )	;
 insert into Seccion(	ID_Curso	,	Cupo,	Numero_Seccion	)values (	10	,	7,	2 )	;
 
 

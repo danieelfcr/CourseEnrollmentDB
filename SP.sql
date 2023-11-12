@@ -69,21 +69,22 @@ begin try
 		-- 2. selección del curso
 		IF(@vID_Estudiante > 0)
 		BEGIN		
-			IF ((SELECT COUNT(1) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso)) = 2)
+			IF ((SELECT COUNT(1) FROM Seccion s inner join Curso c on (c.ID_Curso = s.ID_Curso) where c.ID_Curso =@vCursoAsignacion) = 2)
 			BEGIN
 				-- curso es de tipo tecnico
 				-- Se toma la información de la primera sección del curso
 				select TOP 1 @vSeccionTec1 = s.ID_Seccion, @vCupoTec1 = s.Cupo
 				from Seccion s
 				where s.ID_Curso = @vCursoAsignacion
-
+				print(@vSeccionTec1)
+				
 				-- Se toma la información de la segunda sección del curso
 				select @vSeccionTec2 = s.ID_Seccion, @vCupoTec2 = s.Cupo 
 				from Seccion s
 				where s.ID_Curso = @vCursoAsignacion
 				ORDER BY s.ID_Seccion OFFSET 1 ROW	-- Tomar el segundo resultado con este comando
 				FETCH NEXT 1 ROW ONLY;
-
+				print(@vSeccionTec2)
 				--Verificar que existan prerrequisitos en la tabla
 				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
 				BEGIN
