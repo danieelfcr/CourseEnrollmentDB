@@ -15,7 +15,7 @@ BEGIN
 begin try 
 	--Insertar data de CSV a tabla
     BULK INSERT #tIngreso_Estudiantes
-    FROM 'C:\Input.csv'
+    FROM 'C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Input.csv'
     WITH ( FORMAT = 'CSV',
         FIELDTERMINATOR = ',',
         ROWTERMINATOR = '\n',
@@ -76,7 +76,6 @@ begin try
 				select TOP 1 @vSeccionTec1 = s.ID_Seccion, @vCupoTec1 = s.Cupo
 				from Seccion s
 				where s.ID_Curso = @vCursoAsignacion
-				print(@vSeccionTec1)
 				
 				-- Se toma la información de la segunda sección del curso
 				select @vSeccionTec2 = s.ID_Seccion, @vCupoTec2 = s.Cupo 
@@ -84,7 +83,6 @@ begin try
 				where s.ID_Curso = @vCursoAsignacion
 				ORDER BY s.ID_Seccion OFFSET 1 ROW	-- Tomar el segundo resultado con este comando
 				FETCH NEXT 1 ROW ONLY;
-				print(@vSeccionTec2)
 				--Verificar que existan prerrequisitos en la tabla
 				if ((select count(1) from Prerrequisito cp where cp.Curso = @vCursoAsignacion and cp.Estado = 1) > 0)
 				BEGIN

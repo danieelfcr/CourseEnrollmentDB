@@ -1,4 +1,4 @@
-CREATE PROCEDURE CambioCupos
+CREATE PROCEDURE uspCambioCupos
 	@vID_Seccion int,
 	@vNuevoCupo int
 AS
