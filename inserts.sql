@@ -193,6 +193,7 @@ insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)valu
 insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	1	,	'Asignación exitosa'	,	'Aprobado'	);
 insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	2	,	'Cupos llenos. Espere actualizaciones en los cupos'	,	'Lista de Espera'	);
 insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	3	,	'Se ha cambiado de sección debido a promedio.'	,	'Cambio de sección'	);
+insert into Estado_Asignacion(	ID_Estado_Asignacion	,	Descripcion	,	Nombre	)values (	4	,	'Datos de estudiante no concordantes'	,	'Rechazado'	);
 
 
 -- INSERTS TABLA PRERREQUISITO -> YA
