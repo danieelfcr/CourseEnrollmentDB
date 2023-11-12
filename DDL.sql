@@ -40,7 +40,8 @@ constraint pk_curso foreign key (Curso) references Curso(ID_Curso)
 Create Table Seccion(
 ID_Seccion int PRIMARY KEY IDENTITY(1,1) not null,
 ID_Curso int,
-Cupo int not null
+Cupo int not null,
+Numero_Seccion int not null
 constraint pk_curso_s foreign key (ID_Curso) references Curso(ID_Curso)
 );
 
