@@ -7,8 +7,7 @@ BEGIN
 	BEGIN TRY
 		update Seccion
 		set Cupo = @vNuevoCupo
-		where ID_Seccion = @vID_Seccion
-
+		where ID_Seccion = @vID_Seccion and Cupo < @vNuevoCupo
 		COMMIT TRAN 
 	END TRY
 	BEGIN CATCH
