@@ -323,6 +323,7 @@ begin try
 		END
 		ELSE
 		BEGIN
+			set @vEstadoTX = 4
 			print('Datos incorrectos o estudiante no encontrado.')
 		END
 
